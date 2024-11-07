@@ -6,6 +6,6 @@ import lombok.Data;
 @Data
 @Builder
 public class UserSetting {
-    private String userName;
+    private String username;
     private String password;
 }
