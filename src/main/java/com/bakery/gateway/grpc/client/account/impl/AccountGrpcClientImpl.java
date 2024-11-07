@@ -18,8 +18,8 @@ public class AccountGrpcClientImpl implements AccountGrpcClient {
     public UserSettingResponse createUser(UserSetting userSetting){
         return usersSettingServiceBlockingStub.createUser(
                 UserSettingRequest.newBuilder()
-                        .setRoleName(userSetting.getUserName())
-                        .setUserName(userSetting.getUserName())
+                        .setRoleName(userSetting.getUsername())
+                        .setUserName(userSetting.getUsername())
                         .build());
     }
 }
