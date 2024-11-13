@@ -19,15 +19,14 @@ public class GatewayAuthFilter extends OncePerRequestFilter {
     @Autowired
     private JwtUtils jwtUtils;
 
-    @Autowired
     UserDetailsService userDetailsService;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String token = resolveToken(request);
 //        UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
-        if (token != null && jwtUtils.validateToken(token)
-            jwtUtils.validateToken(token,);
+        if (token != null && !jwtUtils.isTokenExpired(token)) {
+                filterChain.doFilter(request, response);
         }
     }
     private String resolveToken(HttpServletRequest request) {

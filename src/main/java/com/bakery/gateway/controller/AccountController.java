@@ -24,4 +24,8 @@ public class AccountController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
+    @GetMapping("/get-user")
+    public ResponseEntity getUser(@RequestParam String name){
+        return new ResponseEntity<>("Quang", HttpStatus.CREATED);
+    }
 }

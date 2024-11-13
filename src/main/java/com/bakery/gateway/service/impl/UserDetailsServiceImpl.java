@@ -1,14 +1,16 @@
-package com.bakery.gateway.service;
+package com.bakery.gateway.service.impl;
 
-import com.bakery.gateway.entity.entity.UsersEntity;
+import com.bakery.gateway.entity.UsersEntity;
 import com.bakery.gateway.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
+@Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired

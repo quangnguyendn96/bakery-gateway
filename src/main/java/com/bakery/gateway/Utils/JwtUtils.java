@@ -27,17 +27,15 @@ public class JwtUtils {
     // Kiểm tra tính hợp lệ của JWT
     public boolean validateToken(String token) {
         try {
-            extractAllClaims;
+            extractAllClaims(token);
             return true;
         } catch (Exception e) {
             return false;
         }
-        Claims claims = extractAllClaims(token);
-        return (extractedUsername.equals(username) && !isTokenExpired(token));
     }
 
     // Kiểm tra xem token đã hết hạn chưa
-    private boolean isTokenExpired(String token) {
+    public boolean isTokenExpired(String token) {
         return extractExpiration(token).before(new Date());
     }
 
